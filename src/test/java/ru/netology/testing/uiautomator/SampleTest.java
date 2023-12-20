@@ -38,6 +38,9 @@ public class SampleTest {
 
     @Test
     public void testNullText() {
+        mobileObjects.textToBeChanged.isDisplayed();
+        String initialText = mobileObjects.textToBeChanged.getText();
+
         mobileObjects.userInput.isDisplayed();
         mobileObjects.userInput.sendKeys(nullText);
 
@@ -45,7 +48,7 @@ public class SampleTest {
         mobileObjects.buttonChange.click();
 
         mobileObjects.textToBeChanged.isDisplayed();
-        Assertions.assertEquals(mobileObjects.textToBeChanged.getText(), "Hello UiAutomator!");
+        Assertions.assertEquals(mobileObjects.textToBeChanged.getText(), initialText);
     }
 
     @Test
